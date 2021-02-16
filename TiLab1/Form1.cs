@@ -36,7 +36,7 @@ namespace TiLab1
                     chiper = new VigenerChiper();
                     break;
                 case 2:
-   //               chiper = new PlayFairChiper();
+                    chiper = new PlayFairChiper();
                     break;
             }
 
@@ -69,7 +69,7 @@ namespace TiLab1
                     chiper = new VigenerChiper();
                     break;
                 case 2:
-                    //               chiper = new PlayFairChiper();
+                    chiper = new PlayFairChiper();
                     break;
             }
 
@@ -148,7 +148,7 @@ namespace TiLab1
             string str2="";
             for(int i = 0; i<str.Length; i++)
             {
-                if((str[i]>='А' && str[i] <= 'Я') || (str[i] >= 'A' && str[i] <= 'Z') || (chipNum==0 && str[i]=='*'))
+                if((str[i]>='А' && str[i] <= 'Я'|| str[i] == 'Ё') || (str[i] >= 'A' && str[i] <= 'Z') || (chipNum==0 && str[i]=='*'))
                 {
                     str2 += str[i];
                 }

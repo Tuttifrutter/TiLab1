@@ -17,11 +17,6 @@ namespace TiLab1
 
             for (int i = 0; i < upperOriginalText.Length; i++)
             {
-                if (upperOriginalText[i] == ' ')
-                {
-                    result.Append(upperOriginalText[i]);
-                    continue;
-                }
 
                 int p = GetIndexRelativeToABC(upperOriginalText[i]);
                 int k = GetIndexRelativeToABC(newSecretKey[i]);
@@ -38,15 +33,10 @@ namespace TiLab1
             int abcLength = abc.Length;
             string upperEncryptingText = encryptingText.ToUpper();
             string upperSecretKey = secretKey.ToUpper();
-
+            string _key = "";
             for (int i = 0; i < upperEncryptingText.Length; i++)
             {
-                if (upperEncryptingText[i] == ' ')
-                {
-                    result.Append(upperEncryptingText[i]);
-                    continue;
-                }
-               
+            
                 int c = GetIndexRelativeToABC(upperEncryptingText[i]);
                 int k;
                 if (i >= upperSecretKey.Length)
@@ -57,6 +47,7 @@ namespace TiLab1
                 {
                      k = GetIndexRelativeToABC(upperSecretKey[i]);
                 }
+                _key+= GetCharFromABCByIndex(k);
                 int charIndex = (c - k + abcLength) % abcLength;
                 result.Append(GetCharFromABCByIndex(charIndex));
             }
